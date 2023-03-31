@@ -22,4 +22,16 @@ class CarsController < ApplicationController
     render :show
     # render json: { message: "hello car create" }
   end
+
+  def update
+    @car = Car.find_by(id: params[:id])
+    @car.brand = params[:brand] || @car.brand
+    @car.model = params[:model] || @car.model
+    @car.category = params[:category] || @car.category
+    @car.year = params[:year] || @car.year
+
+    @car.save
+    render :show
+    # render json: { message: "hello car update" }
+  end
 end
