@@ -6,5 +6,8 @@ class CarsController < ApplicationController
   end
 
   def show
+    @car = Car.find_by(id: params[:id])
+    render :show
+    # render json: { message: "hello car show" }
   end
 end
