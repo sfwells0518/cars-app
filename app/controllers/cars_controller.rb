@@ -34,4 +34,10 @@ class CarsController < ApplicationController
     render :show
     # render json: { message: "hello car update" }
   end
+
+  def destroy
+    @car = Car.find_by(id: params[:id])
+    @car.destroy
+    render json: { message: "Car has been successfully removed" }
+  end
 end
