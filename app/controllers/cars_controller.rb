@@ -4,4 +4,7 @@ class CarsController < ApplicationController
     render :index
     # render json: { message: "hello car index" }
   end
+
+  def show
+  end
 end
