@@ -10,4 +10,16 @@ class CarsController < ApplicationController
     render :show
     # render json: { message: "hello car show" }
   end
+
+  def create
+    @car = Car.new(
+      brand: params[:brand],
+      model: params[:model],
+      category: params[:category],
+      year: params[:year],
+    )
+    @car.save
+    render :show
+    # render json: { message: "hello car create" }
+  end
 end
